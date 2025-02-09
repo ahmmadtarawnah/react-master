@@ -1,0 +1,137 @@
+@import "tailwindcss";
+ .nav-bg {
+            background-color: #2B3B3A;
+        }
+        .nav-link {
+            color: #AF8E4D;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dropdown {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .dropdown.active {
+            display: block;
+        }
+        .profile-button:focus + .dropdown {
+            display: block;
+        }
+        @media (max-width: 640px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+ @keyframes floatInfinite {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float-infinite {
+    animation: floatInfinite 2s ease-in-out infinite;
+  }
+
+    @keyframes dropdown {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-dropdown {
+    animation: dropdown 0.3s ease-out forwards;
+  }
+  .cardss{
+  margin-left: 90px;
+}
+.provide{
+  justify-content: center;
+  text-align: center;
+  font-size: 50px;
+font-family: 'Times New Roman', Times, serif;  
+}
+.FAQ{
+  justify-content: center;
+  text-align: center;
+  font-size: 50px;
+font-family: 'Times New Roman', Times, serif; 
+color: #AF8E4D  ;
+}
+.Btn {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(#AF8E4D, #d1b376);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.7s, visibility 0.7s;
+}
+
+.Btn.show {
+  opacity: 1; /* Show when scrolled */
+  visibility: visible; /* Show when scrolled */
+}
+
+.arrow path {
+  fill: white;
+}
+
+.text {
+  font-size: 0.7em;
+  width: 100px;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -18px;
+  opacity: 0;
+  transition-duration: .7s;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .7s;
+}
+
+.Btn:hover .arrow {
+  animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.Btn.clicked {
+  transform: translateY(-10px); /* Moves button up slightly */
+  transition: transform 0.3s ease-in-out;
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
